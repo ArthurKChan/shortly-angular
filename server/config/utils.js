@@ -6,6 +6,10 @@ var request = require('request'),
 module.exports = {
   getUrlTitle: function(url) {
     var defer = Q.defer();
+    if ( !Boolean(url.match("((https?|ftp):\/\/)")) ) {
+      url = "http://" + url;
+    }
+
     request(url, function(err, res, html) {
       if (err) {
         defer.reject(err);

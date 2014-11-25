@@ -3,17 +3,64 @@
   <head>
     <meta charset="utf-8" />
     <title>Shortly</title>
+    <link rel="stylesheet" type="text/css" href="lib/semantic-ui/dist/semantic.min.css" />
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
+
+
   </head>
   <body>
-    <h1>Shortly</h1>
+<!--
+    <div class="ui grid">
+      <div class="four wide column"></div>
+      <div class="eight wide column">
+
+
+      </div>
+      <div class="four wide column"></div>
+    </div> -->
+
+    <div class="ui fixed inverted main menu ">
+      <div class="navContainer">
+        <div class="title item">
+          <b>Lemonly<i class="lemon icon"></i> </b>
+        </div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+
+        <a class="item" href="#/">
+          <i class="home icon"></i> Home
+        </a>
+        <a class="item" href="#/links">
+          <i class="linkify icon"></i> Links
+        </a>
+        <a class="item" href="#/shorten">
+          <i class="lemon icon"></i> Shorten
+        </a>
+        <div class="right menu">
+          <div class="item">
+            <div class="ui transparent icon input">
+              <input type="text" placeholder="Search...">
+              <i class="search link icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
     <div ng-view></div>
 
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/semantic-ui/dist/semantic.min.js"></script>
+
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>
 
+    <script src="lib/zeroclipboard/dist/ZeroClipboard.min.js"></script>
+    <script src="lib/angular-zeroclipboard/src/angular-zeroclipboard.js"></script>
     <script src="app/auth/auth.js"></script>
     <script src="app/links/links.js"></script>
     <script src="app/shorten/shorten.js"></script>

@@ -3,6 +3,7 @@ angular.module('shortly', [
   'shortly.links',
   'shortly.shorten',
   'shortly.auth',
+  'zeroclipboard',
   'ngRoute'
 ])
 .config(function($routeProvider, $httpProvider) {
@@ -23,12 +24,21 @@ angular.module('shortly', [
       templateUrl: 'app/shorten/shorten.html',
       controller: 'ShortenController'
     })
+    .otherwise({redirectTo: '/links'});
     // Your code here
 
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls
     $httpProvider.interceptors.push('AttachTokens');
 })
+.config(['uiZeroclipConfigProvider', function(uiZeroclipConfigProvider) {
+
+    // config ZeroClipboard
+    uiZeroclipConfigProvider.setZcConf({
+      swfPath: '../lib/zeroclipboard/dist/ZeroClipboard.swf'
+    });
+
+  }])
 .factory('AttachTokens', function ($window) {
   // this is an $httpInterceptor
   // its job is to stop all out going request

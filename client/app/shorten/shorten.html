@@ -1,6 +1,16 @@
-<div id='container'>
+<div class='container'>
 <!-- Your code here -->
+  <h2 class="ui header"> Shorten </h2>
 
+  <div class="ui labeled right icon input"
+    ng-class="{error: !isValidUrl(link.url) && link.url !== ''}">
+    <div class="ui label">
+  http://
+    </div>
+
+    <input type="text" placeholder="domain.com" ng-model="link.url">
+    <i class="add circle link icon" ng-click="addLink()"></i>
+  </div>
 </div>
 
 

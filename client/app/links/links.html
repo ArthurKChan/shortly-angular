@@ -1,3 +1,18 @@
-<div id='container'>
-  <!-- Your html here -->
+<div class='container'>
+  <h2 class="ui header"> Links </h2>
+
+  <div>
+    <ul>
+      <li ng-repeat="link in data.links">
+        <a href="http://lmny.com/{{link.code}}">{{link.title}}</a>
+        <div class="input-group">
+          <input type="text" class="input-mini input-monospace js-url-field"
+                 value="http://lmny.co/{{link.code}}" readonly="readonly">
+          <span class="input-group-button">
+            <button ui-zeroclip aria-label="Copy to clipboard" class="js-zeroclipboard minibutton zeroclipboard-button" data-clipboard-text="http://lmny.co/{{link.code}}" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
